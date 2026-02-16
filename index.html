@@ -12,13 +12,13 @@
 
 body {
   font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-  background: #f8f9fa;
+  background: #f5f6f5;
   color: #1a1a2e;
   line-height: 1.5;
 }
 
 header {
-  background: #1a365d;
+  background: #007030;
   color: #fff;
   padding: 1.25rem 1.5rem 1rem;
   text-align: center;
@@ -40,8 +40,8 @@ nav a {
   border-radius: 4px;
   transition: all 0.15s;
 }
-nav a:hover { color: #fff; background: rgba(255,255,255,0.1); }
-nav a.active { color: #fff; background: rgba(255,255,255,0.2); }
+nav a:hover { color: #fff; background: rgba(255,255,255,0.15); }
+nav a.active { color: #104735; background: #FEE11A; font-weight: 600; }
 
 main { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
 
@@ -62,7 +62,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #64748b;
+  color: #4D5859;
   margin-bottom: 0.35rem;
 }
 .control-group select {
@@ -75,7 +75,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
   background: #fff;
   cursor: pointer;
 }
-.control-group select:focus { outline: 2px solid #3b82f6; border-color: transparent; }
+.control-group select:focus { outline: 2px solid #007030; border-color: transparent; }
 
 .toggle-group { display: inline-flex; border: 1px solid #d1d5db; border-radius: 6px; overflow: hidden; }
 .toggle-group button {
@@ -85,11 +85,11 @@ main { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
   font-family: inherit;
   font-size: 0.8rem;
   font-weight: 500;
-  color: #64748b;
+  color: #4D5859;
   cursor: pointer;
   transition: all 0.15s;
 }
-.toggle-group button.active { background: #1a365d; color: #fff; }
+.toggle-group button.active { background: #007030; color: #fff; }
 .toggle-group button:not(:last-child) { border-right: 1px solid #d1d5db; }
 
 .chart-section {
@@ -99,8 +99,8 @@ main { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
   margin-bottom: 1.5rem;
   box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
-.chart-section h2 { font-size: 1.15rem; font-weight: 700; color: #1a365d; }
-.chart-section .subtitle { font-size: 0.8rem; color: #64748b; margin-top: 0.2rem; margin-bottom: 1rem; }
+.chart-section h2 { font-size: 1.15rem; font-weight: 700; color: #104735; }
+.chart-section .subtitle { font-size: 0.8rem; color: #4D5859; margin-top: 0.2rem; margin-bottom: 1rem; }
 .chart-wrap { position: relative; height: 480px; }
 
 .table-section {
@@ -111,7 +111,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
   box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   overflow-x: auto;
 }
-.table-section h3 { font-size: 0.95rem; font-weight: 600; color: #1a365d; margin-bottom: 0.75rem; }
+.table-section h3 { font-size: 0.95rem; font-weight: 600; color: #104735; margin-bottom: 0.75rem; }
 
 #data-table {
   width: 100%;
@@ -121,13 +121,13 @@ main { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
 #data-table th, #data-table td {
   padding: 0.5rem 0.65rem;
   text-align: right;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #D8DCDA;
   white-space: nowrap;
 }
 #data-table th {
-  background: #f1f5f9;
+  background: #f0f3f0;
   font-weight: 600;
-  color: #475569;
+  color: #4D5859;
   position: sticky;
   top: 0;
 }
@@ -139,17 +139,17 @@ main { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
   background: #fff;
   z-index: 1;
 }
-#data-table th:first-child { background: #f1f5f9; z-index: 2; }
-#data-table tbody tr:nth-child(even) td { background: #f9fafb; }
-#data-table tbody tr:nth-child(even) td:first-child { background: #f9fafb; }
-#data-table .count-hint { color: #94a3b8; font-size: 0.7rem; }
-#data-table .total-cell { font-weight: 600; color: #1a365d; }
+#data-table th:first-child { background: #f0f3f0; z-index: 2; }
+#data-table tbody tr:nth-child(even) td { background: #f9faf9; }
+#data-table tbody tr:nth-child(even) td:first-child { background: #f9faf9; }
+#data-table .count-hint { color: #A2AAAD; font-size: 0.7rem; }
+#data-table .total-cell { font-weight: 600; color: #104735; }
 
 footer {
   text-align: center;
   padding: 1.5rem;
   font-size: 0.75rem;
-  color: #94a3b8;
+  color: #A2AAAD;
 }
 
 @media (max-width: 768px) {
@@ -223,23 +223,23 @@ let chartInstance = null;
 let currentMode = 'percentage';
 let currentChartType = 'stacked';
 
-// ── Color palettes ──
+// ── UO Color palettes ──
 const CATEGORICAL = [
-  '#4e79a7','#f28e2b','#e15759','#76b7b2','#59a14f',
-  '#edc948','#b07aa1','#ff9da7','#9c755f','#bab0ac',
-  '#5fa2ce','#fc7d0b','#c85200','#7eb0d5','#8cd17d',
-  '#b6992d','#f1ce63','#499894','#d37295','#a0cbe8'
+  '#007030','#004F6E','#489D46','#8D1D58','#00A5B5',
+  '#8ABB40','#E2E11B','#4D5859','#A2AAAD','#104735',
+  '#6aab3d','#0078a0','#b5388f','#2db8c4','#a3cc5e',
+  '#c9c41a','#6b7778','#c4cacb','#3d8a30','#006d90'
 ];
 
 const TRUST_COLORS = {
-  'A lot': '#2d7d46',
-  'Some': '#7bc67e',
-  'Neutral': '#e8c94a',
-  'Little': '#e07c3e',
-  'None': '#c0392b'
+  'A lot': '#007030',
+  'Some': '#489D46',
+  'Neutral': '#E2E11B',
+  'Little': '#8D1D58',
+  'None': '#6b1040'
 };
 
-const ATTENTION_COLORS = { 'More': '#3b82f6', 'Less': '#ef4444' };
+const ATTENTION_COLORS = { 'More': '#004F6E', 'Less': '#8D1D58' };
 
 function getColor(value, yMeta, index) {
   if (yMeta.label === 'Trust in Local News' && TRUST_COLORS[value]) return TRUST_COLORS[value];
@@ -397,7 +397,6 @@ function renderTable(ct) {
     html += `<td class="total-cell">${xCounts[x]}</td></tr>`;
   }
 
-  // Column totals
   html += '<tr><td class="total-cell">Total</td>';
   for (const y of yCategories) {
     let sum = 0;
@@ -422,8 +421,8 @@ function update() {
   document.getElementById('chart-title').textContent = `${yLabel} by ${xLabel}`;
 
   let sub = `${SURVEY_DATA.meta.total_responses} total survey responses`;
-  if (ct.yMeta.type === 'multi') sub += ' · Respondents could select multiple options';
-  if (ct.truncated) sub += ' · Showing top 12 categories';
+  if (ct.yMeta.type === 'multi') sub += ' \u00B7 Respondents could select multiple options';
+  if (ct.truncated) sub += ' \u00B7 Showing top 12 categories';
   document.getElementById('chart-subtitle').textContent = sub;
 
   renderChart(ct);
@@ -435,6 +434,7 @@ function populateSelect(sel, defaultKey) {
   const vars = SURVEY_DATA.meta.variables;
   const demos = [], responses = [];
   for (const [key, m] of Object.entries(vars)) {
+    if (m.role === 'openended') continue;
     (m.role === 'demographic' ? demos : responses).push({ key, label: m.label });
   }
 
